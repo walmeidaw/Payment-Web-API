@@ -61,8 +61,8 @@ export default function Home() {
 
     return (
         <main className={styles.main}>
-            <div className={styles.description}>
-                <button onClick={runPayment}>Teste</button>
+            <div style={{ display: 'flex' }}>
+                <button onClick={runPayment} style={{ display: 'flex', border: '0', padding: '1rem' }}>Teste</button>
             </div>
         </main>
     )
