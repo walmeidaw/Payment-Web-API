@@ -18,10 +18,18 @@ export default function Home() {
                     allowedPaymentMethods: [{
                         type: 'CARD',
                         parameters: {
-                          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-                          allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
+                            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+                            allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
                         }
-                    }]
+                    }],
+                    tokenizationSpecification: {
+                        type: 'PAYMENT_GATEWAY',
+                        parameters: {
+                            "gateway": "stripe",
+                            "stripe:version": "2018-10-31",
+                            "stripe:publishableKey": "pk_test_51Mnr62LlyCPn2xwVWdyEqo5tEZLJWIuCADgcynYc0Sldi3zI7pTN62ibKcCYEvuhlEbmqzBWXQAqsABeDBcUc2ji00EQWtVwb9"
+                        }
+                    }
                 }
             }
         ];
