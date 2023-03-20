@@ -14,18 +14,15 @@ export default function Home() {
                     allowedPaymentMethods: [{
                         type: 'CARD',
                         parameters: {
-                          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-                          allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
+                            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+                            allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
                         }
                     }]
                 }
             },
             {
-                supportedMethods: 'https://apple.com/apple-pay'
-            },
-            {
-                supportedMethods: 'https://samsung.com/pay'
-            },
+                supportedMethods: "https://spay.samsung.com"
+            }
         ];
 
         const paymentDetails = {
