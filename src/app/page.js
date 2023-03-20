@@ -11,21 +11,17 @@ export default function Home() {
                     environment: 'TEST',
                     apiVersion: 2,
                     apiVersionMinor: 0,
+                    merchantInfo: {
+                        merchantId: '07821208636059528377',
+                        merchantName: 'Karpa Dev'
+                    },
                     allowedPaymentMethods: [{
                         type: 'CARD',
                         parameters: {
-                            allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-                            allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
+                          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+                          allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
                         }
                     }]
-                }
-            },
-            { supportedMethods: "https://spay.samsung.com" },
-            { 
-                supportedMethods: "https://apple.com/apple-pay",
-                data: {
-                    version: 3,
-                    countryCode: "BR"
                 }
             }
         ];
