@@ -11,8 +11,6 @@ export default function Home() {
                     environment: 'TEST',
                     apiVersion: 2,
                     apiVersionMinor: 0,
-                    merchantName: "Karpa Dev",
-                    merchantId: "0701-5815-9433",
                     allowedPaymentMethods: [{
                         type: 'CARD',
                         parameters: {
@@ -21,7 +19,22 @@ export default function Home() {
                         }
                     }]
                 }
-            },{ supportedMethods: 'basic-card' }
+            },
+            {
+                supportedMethods: 'https://apple.com/apple-pay',
+                data: {
+                    environment: 'TEST',
+                    apiVersion: 2,
+                    apiVersionMinor: 0,
+                    allowedPaymentMethods: [{
+                        type: 'CARD',
+                        parameters: {
+                          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+                          allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
+                        }
+                    }]
+                }
+            },
         ];
 
         const paymentDetails = {
