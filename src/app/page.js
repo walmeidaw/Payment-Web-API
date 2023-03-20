@@ -20,8 +20,13 @@ export default function Home() {
                     }]
                 }
             },
-            {
-                supportedMethods: "https://spay.samsung.com"
+            { supportedMethods: "https://spay.samsung.com" },
+            { 
+                supportedMethods: "https://apple.com/apple-pay",
+                data: {
+                    version: 3,
+                    countryCode: "BR"
+                }
             }
         ];
 
