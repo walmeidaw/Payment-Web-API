@@ -21,19 +21,10 @@ export default function Home() {
                 }
             },
             {
-                supportedMethods: 'https://apple.com/apple-pay',
-                data: {
-                    environment: 'TEST',
-                    apiVersion: 2,
-                    apiVersionMinor: 0,
-                    allowedPaymentMethods: [{
-                        type: 'CARD',
-                        parameters: {
-                          allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-                          allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
-                        }
-                    }]
-                }
+                supportedMethods: 'https://apple.com/apple-pay'
+            },
+            {
+                supportedMethods: 'https://samsung.com/pay'
             },
         ];
 
