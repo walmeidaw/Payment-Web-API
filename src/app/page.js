@@ -20,16 +20,16 @@ export default function Home() {
                         parameters: {
                             allowedAuthMethods: ["PAN_ONLY", "CRYPTOGRAM_3DS"],
                             allowedCardNetworks: ["AMEX", "DISCOVER", "INTERAC", "JCB", "MASTERCARD", "VISA"]
+                        },
+                        tokenizationSpecification: {
+                            type: 'PAYMENT_GATEWAY',
+                            parameters: {
+                                "gateway": "stripe",
+                                "stripe:version": "2018-10-31",
+                                "stripe:publishableKey": "pk_test_51Mnr62LlyCPn2xwVWdyEqo5tEZLJWIuCADgcynYc0Sldi3zI7pTN62ibKcCYEvuhlEbmqzBWXQAqsABeDBcUc2ji00EQWtVwb9"
+                            }
                         }
-                    }],
-                    tokenizationSpecification: {
-                        type: 'PAYMENT_GATEWAY',
-                        parameters: {
-                            "gateway": "stripe",
-                            "stripe:version": "2018-10-31",
-                            "stripe:publishableKey": "pk_test_51Mnr62LlyCPn2xwVWdyEqo5tEZLJWIuCADgcynYc0Sldi3zI7pTN62ibKcCYEvuhlEbmqzBWXQAqsABeDBcUc2ji00EQWtVwb9"
-                        }
-                    }
+                    }]
                 }
             }
         ];
@@ -37,7 +37,7 @@ export default function Home() {
         const paymentDetails = {
             total: {
                 label: 'Total',
-                amount: { currency: 'BRL', value: '100.00' }
+                amount: { currency: 'BRL', value: '1.00' }
             },
             displayItems: [
                 { label: 'Item A', amount: { currency: 'BRL', value: '50.00' } },
@@ -55,7 +55,11 @@ export default function Home() {
 
         try {
             const paymentRequest = new PaymentRequest(paymentMethods, paymentDetails, options);
+            console.log( 'request', paymentRequest )
             const paymentResponse = await paymentRequest.show();
+
+            console.log( 'response', paymentResponse )
+
             await paymentResponse.complete('success');
             console.log('Pagamento realizado com sucesso!');
         } catch (error) {
